@@ -1,7 +1,6 @@
 package flowershop;
 
 import java.util.*;
-import java.util.concurrent.Callable;
 
 public class Bouquet implements Component {
     List<Component> components = new ArrayList<>();
