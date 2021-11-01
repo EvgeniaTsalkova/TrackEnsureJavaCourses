@@ -3,6 +3,7 @@ package elections;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 public class Menu {
     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -59,6 +60,19 @@ public class Menu {
                 String opt = bufferedReader.readLine();
                 switch(opt){
                     case "5.1":
+                        System.out.println("Введите номер участка: ");
+                        int stNumber = Integer.parseInt(bufferedReader.readLine());
+                        PollingStation ps = PollingStationList.getPollingStations().stream()
+                                .filter(s-> s.getNumberOfStation() == stNumber).findAny().get();
+                        System.out.println(ps.getCitizens());
+                    break;
+                    case "5.2":
+                        CitizensList.getCitizens().add(newCitizen());
+                        break;
+                    case "5.3":
+                        System.out.println("Введите номер паспорта избирателя для удаления: ");
+                        int passport = Integer.parseInt(bufferedReader.readLine());
+                        break;
                     case"5.4": loop = false;
                     break;
                 }

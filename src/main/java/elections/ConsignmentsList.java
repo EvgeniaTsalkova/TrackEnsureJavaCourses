@@ -1,5 +1,8 @@
 package elections;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,6 +25,14 @@ public class ConsignmentsList {
             }
         }
         return consignments;
+    }
+
+    public static void writeConsignmentsToFile(List<Consignment> consignments){
+        try(ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream("consignments.txt"))){
+            writer.writeObject(consignments);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 }

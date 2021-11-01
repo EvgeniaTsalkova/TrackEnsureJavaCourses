@@ -1,14 +1,15 @@
 package elections;
 
-
-import java.time.YearMonth;
+import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
-public class PollingStation {
+public class PollingStation implements Serializable {
     private int numberOfStation;
     private String address;
     private List<Citizen> citizens;
+    private Map<Citizen, Integer> result;
 
     public PollingStation(int numberOfStation, String address, List<Citizen> citizens) {
         this.numberOfStation = numberOfStation;

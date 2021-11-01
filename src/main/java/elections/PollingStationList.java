@@ -1,5 +1,8 @@
 package elections;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -23,6 +26,14 @@ public class PollingStationList {
             }
         }
         return stations;
+    }
+
+    public static void writeStationsToFile(List<PollingStation> stations){
+        try(ObjectOutputStream writer = new ObjectOutputStream(new FileOutputStream("stations.txt"))){
+            writer.writeObject(stations);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 

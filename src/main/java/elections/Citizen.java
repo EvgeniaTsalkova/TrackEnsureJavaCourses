@@ -1,6 +1,7 @@
 package elections;
 
 import java.io.Serializable;
+import java.util.Random;
 
 public class Citizen implements Serializable {
     private final String name;
@@ -11,6 +12,7 @@ public class Citizen implements Serializable {
     private boolean specialServices;
     private boolean inQuarantine;
     private String consignmentName;
+    private Random readyToVote;
 
     public Citizen(String name, int numberOfPassport, long inn, int yearOfBirth, int pollingStation, boolean specialServices, boolean inQuarantine, String cons) {
         this.name = name;
@@ -29,6 +31,7 @@ public class Citizen implements Serializable {
         this.specialServices = specialServices;
         this.inQuarantine = inQuarantine;
         this.consignmentName = cons;
+        this.readyToVote = new Random();
     }
 
     public String getName() {
@@ -61,6 +64,14 @@ public class Citizen implements Serializable {
 
     public String getConsignmentName() {
         return consignmentName;
+    }
+
+    public void setConsignmentName(String consignmentName) {
+        this.consignmentName = consignmentName;
+    }
+
+    public boolean getReadyToVote(){
+        return readyToVote.nextBoolean();
     }
 
     public boolean isValidInn(long inn){

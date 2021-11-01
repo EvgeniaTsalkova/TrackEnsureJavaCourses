@@ -8,14 +8,14 @@ import java.util.stream.Collectors;
 public class CitizensList {
 
     public static List<Citizen> getCitizens() {
-        List<Citizen> citizens = null;
+       /* List<Citizen> citizens = null;
         try(ObjectInputStream reader = new ObjectInputStream(new FileInputStream("citizens.txt"))){
             citizens = (List<Citizen>) reader.readObject();
         } catch (IOException | ClassNotFoundException e){
             e.printStackTrace();
         }
-        return citizens;
-        /*return  new ArrayList<>(Arrays.asList(
+        return citizens;*/
+        return  new ArrayList<>(Arrays.asList(
                 new Citizen("Name1", 567891, 4499559988L, 1975, 5, false, true, ""),
                 new Citizen("Name2", 789435, 8866445500L, 1980, 3, false, false, ""),
                 new Citizen("Name3", 893451, 2233009911L, 1996, 2, false, false, ""),
@@ -39,7 +39,7 @@ public class CitizensList {
                 new Citizen("Name21", 893451, 2049911233L, 1966, 2, false, false, ""),
                 new Citizen("Name22", 794583, 8945500849L, 2000, 3, false, true, ""),
                 new Citizen("Name23", 893145, 2234993011L, 1946, 2, false, false, "")
-                ));*/
+                ));
     }
 
     public static List<Citizen> getVoters()  {
