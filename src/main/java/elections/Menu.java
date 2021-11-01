@@ -18,6 +18,7 @@ public class Menu {
                 "7 - Показать партии;" + "\n" +
                 "8 - Провести выборы;" + "\n" +
                 "9 - Показать результаты выборов;" + "\n" +
+                "0 - Сохранить данные в файл;" + "\n" +
                 "10 - Выход из программы.");
     }
 
@@ -38,11 +39,9 @@ public class Menu {
             boolean spServ = Boolean.parseBoolean(bufferedReader.readLine());
             System.out.print("Находится на карантине: true/false - ");
             boolean quarant = Boolean.parseBoolean(bufferedReader.readLine());
-            System.out.print("Будет ли голосовать: ");
-            boolean vote = Boolean.parseBoolean(bufferedReader.readLine());
-            System.out.print("За какаую партию голосует: ");
+            System.out.print("Название партии, если является кандидатом: ");
             String cons = bufferedReader.readLine();
-            citizen = new Citizen(name, passport,inn, year, station, spServ, quarant, vote, cons);
+            citizen = new Citizen(name, passport,inn, year, station, spServ, quarant, cons);
         } catch (IOException e){
             e.printStackTrace();
         }

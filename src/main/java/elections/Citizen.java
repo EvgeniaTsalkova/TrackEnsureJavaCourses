@@ -10,10 +10,9 @@ public class Citizen implements Serializable {
     private int pollingStation;
     private boolean specialServices;
     private boolean inQuarantine;
-    private boolean readyToVote;
-    private String consToVote;
+    private String consignmentName;
 
-    public Citizen(String name, int numberOfPassport, long inn, int yearOfBirth, int pollingStation, boolean specialServices, boolean inQuarantine, boolean readyToVote, String consToVote) {
+    public Citizen(String name, int numberOfPassport, long inn, int yearOfBirth, int pollingStation, boolean specialServices, boolean inQuarantine, String cons) {
         this.name = name;
         this.numberOfPassport = numberOfPassport;
            try {
@@ -29,8 +28,7 @@ public class Citizen implements Serializable {
         this.pollingStation = pollingStation;
         this.specialServices = specialServices;
         this.inQuarantine = inQuarantine;
-        this.readyToVote = readyToVote;
-        this.consToVote = consToVote;
+        this.consignmentName = cons;
     }
 
     public String getName() {
@@ -59,6 +57,10 @@ public class Citizen implements Serializable {
 
     public boolean isInQuarantine() {
         return inQuarantine;
+    }
+
+    public String getConsignmentName() {
+        return consignmentName;
     }
 
     public boolean isValidInn(long inn){

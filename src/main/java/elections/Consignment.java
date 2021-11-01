@@ -1,17 +1,15 @@
 package elections;
 
 import java.util.List;
-import java.util.Map;
 
 
 public class Consignment {
-    private String name;
+    private final String name;
     private Fraction fraction;
-    private int dateOfCreation;
-    private List<Candidate> candidates;
-    //private Map<Citizen, Integer> candidates;
+    private final int dateOfCreation;
+    private List<Citizen> candidates;
 
-    public Consignment(String name, Fraction fraction, int dateOfCreation, List<Candidate> candidates) {
+    public Consignment(String name, Fraction fraction, int dateOfCreation, List<Citizen> candidates) {
         this.name = name;
         this.fraction = fraction;
         this.dateOfCreation = dateOfCreation;
@@ -30,7 +28,7 @@ public class Consignment {
         return dateOfCreation;
     }
 
-    public List<Candidate> getCandidates() {
+    public List<Citizen> getCandidates() {
         return candidates;
     }
 
